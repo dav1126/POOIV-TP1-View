@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="289.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.FXMLController_2">
+   <children>
+      <StackPane alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="47.0" prefWidth="600.0">
+         <children>
+            <Label fx:id="libelleLabel" minHeight="-Infinity" minWidth="-Infinity" styleClass="main-title-text" text="Libelle">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin>
+            </Label>
+            <TextField fx:id="libelleTextField" alignment="CENTER" blendMode="MULTIPLY" minHeight="-Infinity" minWidth="-Infinity" prefHeight="43.0" prefWidth="560.0" styleClass="main-title-text" text="Libelle" visible="false">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <StackPane.margin>
+                  <Insets left="20.0" right="20.0" top="7.0" />
+               </StackPane.margin>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </TextField>
+         </children>
+      </StackPane>
+      <HBox prefHeight="244.0" prefWidth="600.0">
+         <children>
+            <VBox prefHeight="212.0" prefWidth="376.0">
+               <children>
+                  <Label fx:id="definitionTitleLabel" prefHeight="32.0" prefWidth="117.0" styleClass="second-title-text" text="Définition" />
+                  <StackPane prefHeight="71.0" prefWidth="376.0">
+                     <children>
+                        <Label fx:id="definitionTextLabel" alignment="TOP_LEFT" contentDisplay="CENTER" prefHeight="66.0" prefWidth="376.0" text="Test Nombre de mots maximum de la definition est à vingt malgré le fait que ca pourrait etre beaucoup plus !" wrapText="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <StackPane.margin>
+                              <Insets left="8.0" />
+                           </StackPane.margin>
+                        </Label>
+                        <TextArea fx:id="definitionTextTextField" blendMode="MULTIPLY" prefHeight="200.0" prefWidth="200.0" styleClass="label" text="Test Nombre de mots maximum de la definition est à vingt malgré le fait que ca pourrait etre beaucoup plus !" visible="false" wrapText="true" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </StackPane>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="100.0" prefWidth="222.0">
+                           <children>
+                              <HBox prefHeight="14.0" prefWidth="600.0">
+                                 <children>
+                                    <Label text="Première saisie:" />
+                                    <Label fx:id="dateSaisieLabel" text="XXXX-XX-XX">
+                                       <HBox.margin>
+                                          <Insets left="5.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="13.0" prefWidth="226.0">
+                                 <children>
+                                    <Label text="Dernière modification:">
+                                       <HBox.margin>
+                                          <Insets left="10.0" top="2.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label fx:id="dateModifLabel" text="XXXX-XX-XX">
+                                       <HBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <StackPane prefHeight="38.0" prefWidth="222.0">
+                                 <children>
+                                    <HBox fx:id="buttonsAppliquerAnnulerHBox" prefHeight="100.0" prefWidth="200.0" translateX="38.0" translateY="20.0" visible="false">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#appliquerModifButton" text="Appliquer" />
+                                          <Button mnemonicParsing="false" onAction="#annulerModifButton" text="Annuler">
+                                             <HBox.margin>
+                                                <Insets left="30.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <Button fx:id="modificationButton" mnemonicParsing="false" onAction="#modifierMot" text="Apporter des modifications">
+                                       <StackPane.margin>
+                                          <Insets top="20.0" />
+                                       </StackPane.margin>
+                                    </Button>
+                                 </children>
+                              </StackPane>
+                              <StackPane prefHeight="150.0" prefWidth="200.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#fermerButton" text="Fermer">
+                                       <StackPane.margin>
+                                          <Insets top="10.0" />
+                                       </StackPane.margin>
+                                    </Button>
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox fx:id="conteneurImage" prefHeight="200.0" prefWidth="100.0" translateY="-10.0">
+               <children>
+                  <fx:include fx:id="customImgView" source="DraggableImage.fxml" />
+                  <Button fx:id="chooseImgButton" disable="true" mnemonicParsing="false" onAction="#choisirImage" text="Choisir une image">
+                     <VBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

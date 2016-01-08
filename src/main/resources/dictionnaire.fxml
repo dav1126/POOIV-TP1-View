@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.FXMLController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="250.0" prefWidth="300.0" spacing="10.0">
+         <children>
+            <VBox prefHeight="95.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Label text="Entrez une expression" />
+                  <TextField fx:id="motInput" maxWidth="272.0" />
+                  <RadioButton fx:id="radioMotExact" mnemonicParsing="false" selected="true" text="mot exact">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="mot" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="radioMotPartiel" mnemonicParsing="false" text="mot partiel (3 lettres min)" toggleGroup="$mot" />
+                  <CheckBox fx:id="checkBoxImage" mnemonicParsing="false" text="avec image">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </CheckBox>
+               </children>
+               <padding>
+                  <Insets bottom="15.0" />
+               </padding>
+            </VBox>
+            <HBox prefHeight="51.0" prefWidth="200.0" spacing="13.0">
+               <children>
+                  <CheckBox fx:id="checkBoxSaisieAvant" mnemonicParsing="false" onAction="#enableDPSaisieAvant" text="saisie avant" />
+                  <DatePicker fx:id="datePickerSaisieAvant" disable="true" editable="false" />
+               </children>
+            </HBox>
+            <HBox prefHeight="51.0" prefWidth="200.0" spacing="13.0">
+               <children>
+                  <CheckBox fx:id="checkBoxSaisieApres" mnemonicParsing="false" onAction="#enableDPSaisieApres" text="saisie après" />
+                  <DatePicker fx:id="datePickerSaisieApres" disable="true" editable="false" />
+               </children>
+            </HBox>
+            <HBox prefHeight="51.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <CheckBox fx:id="checkBoxModifAvant" mnemonicParsing="false" onAction="#enableDPModifAvant" text="modif avant" />
+                  <DatePicker fx:id="datePickerModifAvant" disable="true" editable="false" />
+               </children>
+            </HBox>
+            <HBox prefHeight="51.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <CheckBox fx:id="checkBoxModifApres" mnemonicParsing="false" onAction="#enableDPModifApres" text="modif après" />
+                  <DatePicker fx:id="datePickerModifApres" disable="true" editable="false" />
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Button fx:id="rechercheButton" mnemonicParsing="false" onAction="#activerRecherche" text="Rechercher" />
+                  <Button fx:id="ajouterButton" mnemonicParsing="false" onAction="#ajouterMot" text="Ajouter" />
+               </children>
+               <padding>
+                  <Insets top="15.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="quitterButton" mnemonicParsing="false" onAction="#quitter" text="Quitter" />
+               </children>
+            </HBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <HBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" />
+         </HBox.margin>
+         <padding>
+            <Insets right="20.0" />
+         </padding>
+      </VBox>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="200.0" spacing="10.0">
+         <children>
+            <Label text="Résultats de la recherche" />
+            <ListView fx:id="listViewResultats" prefHeight="600.0" prefWidth="200.0" />
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Button fx:id="consulterButton" mnemonicParsing="false" onAction="#consulterMot" text="Consulter" />
+                  <Button fx:id="supprimerButton" mnemonicParsing="false" onAction="#supprimerMot" text="Supprimer" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</HBox>
